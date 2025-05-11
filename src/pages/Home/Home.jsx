@@ -4,27 +4,37 @@ import { FaStar } from "react-icons/fa";
 const Home = () => {
   return (
     <div className={s.homeSection}>
-      <div className={s.container}>
-        <h2 className={s.title}>Welcome to Phonebook!</h2>
-        <p className={s.text}>
+      <div
+        className={`${s.container}  
+        p-4 flex flex-col gap-1 items-center justify-center md:pt-12 md:pr-20 md:pb-12 md:pl-20 md:gap-4 `}
+      >
+        <h2 className={`${s.title} text-3xl md:text-5xl lg:text-6xl`}>
+          Welcome to Phonebook!
+        </h2>
+        <p className={`${s.text} text-xl md:text-3xl lg:text-4xl`}>
           This is your personal contact management application. Here you can:
         </p>
-        <ul className={s.list}>
-          <li className={s.item}>
-            <FaStar className={s.iconStar} size="15" />
-            <span>Add new contacts</span>
+        <ul className={`flex flex-col justify-center items-start gap-2 mb-5`}>
+          <li className={`flex gap-1 justify-start items-center`}>
+            <FaStar className={s.iconStar} size={15} />
+            <span className={`${s.itemText} text-xl md:text-2xl lg:text-3xl`}>
+              Add new contacts
+            </span>
           </li>
-          <li className={s.item}>
-            <FaStar className={s.iconStar} size="15" />
-            <span>Edit and delete existing ones</span>
+          <li className={`flex gap-1 justify-start items-center`}>
+            <FaStar className={s.iconStar} size={15} />
+            <span className={`${s.itemText} text-xl md:text-2xl lg:text-3xl`}>
+              Edit and delete existing ones
+            </span>
           </li>
-          <li className={s.item}>
-            <FaStar className={s.iconStar} size="15" />
-            <span>Quickly find the people you need using the search</span>
-            function
+          <li className={`flex gap-1 justify-start items-baseline`}>
+            <FaStar className={s.iconStar} size={15} />
+            <span className={`${s.itemText} text-xl md:text-2xl lg:text-3xl`}>
+              Quickly find the people you need using the search function
+            </span>
           </li>
         </ul>
-        <p className={s.text}>
+        <p className={`${s.text} text-xl md:text-3xl lg:text-4xl`}>
           <Link className={s.linkRegister} to="/register">
             Sign up
           </Link>{" "}

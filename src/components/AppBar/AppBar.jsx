@@ -8,7 +8,7 @@ import s from "./AppBar.module.css";
 const AppBar = () => {
   const isLogin = useSelector(isLoggedInSelector);
   return (
-    <nav className={s.navBox}>
+    <nav className={`${s.navBox} `}>
       <Navigation />
       {isLogin ? <UserMenu /> : <AuthNav />}
     </nav>

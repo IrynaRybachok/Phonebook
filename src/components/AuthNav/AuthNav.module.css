@@ -1,6 +1,7 @@
 .AuthNav {
   display: flex;
-  gap: 30px;
+  flex-direction: row;
+  gap: 25px;
   justify-content: flex-end;
 }
 
