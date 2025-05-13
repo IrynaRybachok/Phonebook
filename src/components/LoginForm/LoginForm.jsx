@@ -54,7 +54,9 @@ const LoginForm = () => {
       onSubmit={handleSubmit}
       validationSchema={FeedbackSchema}
     >
-      <Form className={s.form}>
+      <Form
+        className={`${s.form} flex flex-col gap-6 justify-center items-center w-full pt-8 pr-6 pb-8 pl-6 md:pt-10 md:pr-15 md:pb-10 md:pl-10 md:w-125 md:gap-7.5 md:mb-10`}
+      >
         <div className={s.wrapInput}>
           <Field
             className={s.input}

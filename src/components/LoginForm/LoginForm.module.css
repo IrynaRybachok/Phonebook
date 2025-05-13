@@ -1,13 +1,3 @@
-.form {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 30px;
-  justify-content: center;
-  align-items: center;
-  width: 500px;
-  margin-bottom: 40px;
-}
-
 .wrapInput {
   position: relative;
   display: flex;

@@ -1,11 +1,11 @@
 import { Field, Form, Formik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../redux/auth/operations";
-import { useId } from "react";
+import { useEffect, useId } from "react";
 import * as Yup from "yup";
 import { ErrorMessage } from "formik";
 import { isLoggedInSelector } from "../../redux/auth/selectors";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import s from "./RegistrationForm.module.css";
 
 const RegistrationForm = () => {
@@ -20,10 +20,13 @@ const RegistrationForm = () => {
 
   const dispatch = useDispatch();
   const isLogin = useSelector(isLoggedInSelector);
+  const navigate = useNavigate();
 
-  if (isLogin) {
-    return <Navigate to="/" />;
-  }
+  useEffect(() => {
+    if (isLogin) {
+      navigate("/contacts");
+    }
+  }, [isLogin, navigate]);
 
   const FeedbackSchema = Yup.object().shape({
     name: Yup.string()
