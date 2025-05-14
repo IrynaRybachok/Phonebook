@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import Loader from "../../components/Loader/Loader";
 import { fetchContacts } from "../../redux/contacts/operations";
 import { selectError, selectLoading } from "../../redux/contacts/selectors";
+import s from "./ContactsPage.module.css";
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
@@ -17,14 +18,18 @@ const ContactsPage = () => {
   }, [dispatch]);
   return (
     <>
-      <div className="containerPhonebook">
-        <h1 className="title">
-          Phonebook <PiAddressBookTabsLight size="30" />
-        </h1>
-        <ContactForm />
-        <SearchBox />
-        {isLoading && !isError && <Loader />}
-        <ContactList />
+      <div className={`${s.containerPhonebook} flex gap-10`}>
+        <div className={s.contactForm}>
+          <h1 className={s.title}>
+            Phonebook <PiAddressBookTabsLight size="30" />
+          </h1>
+          <ContactForm />
+        </div>
+        <div className={s.searchList}>
+          <SearchBox />
+          {isLoading && !isError && <Loader />}
+          <ContactList />
+        </div>
       </div>
     </>
   );

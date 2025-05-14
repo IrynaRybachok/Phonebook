@@ -6,9 +6,14 @@ const Home = () => {
     <div className={s.homeSection}>
       <div
         className={`${s.container}  
-        p-4 flex flex-col gap-1 items-center justify-center md:pt-12 md:pr-20 md:pb-12 md:pl-20 md:gap-4 `}
+        p-4 flex flex-col gap-1 items-center justify-center
+        md:pt-10 md:pr-12 md:pb-10 md:pl-12 md:gap-4
+        lg:pt-12 lg:pr-16 lg:pb-12 lg:pl-16
+        xl:pr-20 xl:pl-20`}
       >
-        <h2 className={`${s.title} text-3xl md:text-5xl lg:text-6xl`}>
+        <h2
+          className={`${s.title} text-3xl md:text-5xl lg:text-7xl xl:text-8xl`}
+        >
           Welcome to Phonebook!
         </h2>
         <p className={`${s.text} text-xl md:text-3xl lg:text-4xl`}>

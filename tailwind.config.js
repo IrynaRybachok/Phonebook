@@ -8,10 +8,20 @@ export default {
       screens: {
         sm: "100%",
         md: "768px",
-        lg: "1440px",
+        lg: "1024px",
+        xl: "1280px",
       },
     },
-    extend: {},
+    extend: {
+      width: {
+        "2xl": "42rem",
+        "3xl": "48rem",
+        "4xl": "56rem",
+        "5xl": "64rem",
+        "6xl": "72rem",
+        "7xl": "80rem",
+      },
+    },
   },
   plugins: [],
 };
