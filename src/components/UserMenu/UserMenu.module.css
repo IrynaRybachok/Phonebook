@@ -1,10 +1,3 @@
-.UserMenu {
-  display: flex;
-  gap: 30px;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .title {
   opacity: 0.9;
   background: linear-gradient(
@@ -17,7 +10,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: Inter;
-  font-size: 60px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;

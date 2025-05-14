@@ -7,8 +7,10 @@ const UserMenu = () => {
   const user = useSelector(userSelector);
   const dispatch = useDispatch();
   return (
-    <div className={s.UserMenu}>
-      <h2 className={s.title}>Welcome, {user.name}</h2>
+    <div className={` flex justify-between items-center gap-4 md:gap-8`}>
+      <h2 className={`${s.title} text-2xl md:text-4xl lg:text-6xl`}>
+        Welcome, {user.name}
+      </h2>
       <button
         className={s.btnLogout}
         type="button"

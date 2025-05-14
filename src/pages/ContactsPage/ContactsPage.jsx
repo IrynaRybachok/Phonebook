@@ -18,7 +18,12 @@ const ContactsPage = () => {
   }, [dispatch]);
   return (
     <>
-      <div className={`${s.containerPhonebook} flex gap-10`}>
+      <div
+        className={`${s.containerPhonebook} w-full pt-8 pr-6 pb-8 pl-6 
+        md:p-10 md:flex md:gap-10 md:w-2xl
+        lg:w-4xl lg:justify-evenly lg:items-center
+        xl:pr-12 xl:pl-12 xl:w-6xl`}
+      >
         <div className={s.contactForm}>
           <h1 className={s.title}>
             Phonebook <PiAddressBookTabsLight size="30" />
