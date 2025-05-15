@@ -9,12 +9,12 @@ const SearchBox = () => {
   const filter = useSelector(selectNameFilter);
   return (
     <>
-      <div className={`pb-4 md:pb-8`}>
+      <div className={`flex flex-col gap-2 items-center`}>
         <p className={s.text}>Find contacts by name</p>
         <div className={`flex justify-center items-center gap-2`}>
           <FaMagnifyingGlass className={s.icon} size="20" />
           <input
-            className={`${s.input} w-full`}
+            className={`${s.input} w-full lg:w-md`}
             type="text"
             value={filter}
             onChange={(e) => {

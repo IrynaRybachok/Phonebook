@@ -9,14 +9,14 @@ const ContactList = () => {
   const filterContactsList = useSelector(selectFilteredContacts);
   return (
     <ul
-      className={`flex flex-col gap-4 justify-start items-center xl:flex-row xl:flex-wrap xl:gap-x-5 xl:gap-y-5 `}
+      className={`flex flex-col gap-4 justify-start items-center lg:flex-row lg:flex-wrap lg:gap-x-4.5 lg:gap-y-5 `}
     >
       {filterContactsList.map((data) => (
         <motion.li
           initial="hidden"
           animate="visible"
           variants={slideInFromRight()}
-          className={`${s.contactItem} w-xs lg:w-sm`}
+          className={`${s.contactItem} w-full md:w-xs lg:w-3xs xl:w-sm `}
           key={data.id}
         >
           <Contact data={data} />

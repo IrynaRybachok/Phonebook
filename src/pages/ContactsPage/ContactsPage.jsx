@@ -21,7 +21,7 @@ const ContactsPage = () => {
       <div
         className={`${s.containerPhonebook} w-full pt-8 pr-6 pb-8 pl-6 
         md:p-10 md:flex md:gap-10 md:w-2xl
-        lg:w-4xl lg:justify-evenly lg:items-center
+        lg:w-4xl
         xl:pr-12 xl:pl-12 xl:w-6xl`}
       >
         <div className={s.contactForm}>
@@ -30,7 +30,7 @@ const ContactsPage = () => {
           </h1>
           <ContactForm />
         </div>
-        <div className={s.searchList}>
+        <div className={`flex flex-col gap-4 md:gap-8 md:justify-start`}>
           <SearchBox />
           {isLoading && !isError && <Loader />}
           <ContactList />

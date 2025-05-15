@@ -19,11 +19,14 @@ const Contact = ({ data: { id, name, number } }) => {
         </p>
       </div>
       <button
-        className={s.contactBtnDelete}
+        className={`${s.contactBtnDelete} p-1.5 w-10 
+        md:w-28 
+        lg:w-20
+        xl:w-28`}
         onClick={() => dispatch(deleteContact(id))}
       >
         <MdDelete size="20" className={s.iconDelete} />
-        <span className={s.btnDelete}>Delete</span>
+        <span className={`${s.btnDelete} hidden md:inline`}>Delete</span>
       </button>
     </div>
   );

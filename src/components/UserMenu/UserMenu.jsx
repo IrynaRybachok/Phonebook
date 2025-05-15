@@ -8,7 +8,7 @@ const UserMenu = () => {
   const dispatch = useDispatch();
   return (
     <div className={` flex justify-between items-center gap-4 md:gap-8`}>
-      <h2 className={`${s.title} text-2xl md:text-4xl lg:text-6xl`}>
+      <h2 className={`${s.title} hidden md:block md:text-4xl lg:text-6xl`}>
         Welcome, {user.name}
       </h2>
       <button

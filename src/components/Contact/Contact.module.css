@@ -47,9 +47,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
   height: 30px;
-  padding: 5px 8px;
 
   font-family: Inter;
   font-size: 15px;
@@ -60,7 +58,13 @@
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
   transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.contactBtnDelete span,
+.contactBtnDelete span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+
 .contactBtnDelete .iconDelete {
   display: block;
   position: absolute;

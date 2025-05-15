@@ -14,8 +14,10 @@ export default {
     },
     extend: {
       width: {
+        "3xs": "16rem",
         xs: "20rem",
         sm: "24rem",
+        md: "28rem",
         "2xl": "42rem",
         "3xl": "48rem",
         "4xl": "56rem",
