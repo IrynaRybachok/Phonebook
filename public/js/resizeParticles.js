@@ -1,11 +1,26 @@
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    const vh = window.innerHeight;
-    const el = document.getElementById("particles-js");
-    if (el) {
-      el.style.height = vh + "px";
-    } else {
-      console.warn("#particles-js не найден!");
+function setParticlesHeight() {
+  const vh = window.innerHeight;
+  const el = document.getElementById("particles-js");
+  if (el) {
+    el.style.height = vh + "px";
+    return true;
+  }
+  return false;
+}
+
+if (!setParticlesHeight()) {
+  const observer = new MutationObserver(() => {
+    if (setParticlesHeight()) {
+      observer.disconnect();
     }
-  }, 300); // Подождать 300 мс
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+}
+
+window.addEventListener("resize", () => {
+  const el = document.getElementById("particles-js");
+  if (el) {
+    el.style.height = window.innerHeight + "px";
+  }
 });
