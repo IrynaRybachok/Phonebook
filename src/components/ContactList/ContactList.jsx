@@ -11,11 +11,12 @@ const ContactList = () => {
     <ul
       className={`flex flex-col gap-4 justify-start items-center lg:flex-row lg:flex-wrap lg:gap-x-4.5 lg:gap-y-5 `}
     >
-      {filterContactsList.map((data) => (
+      {filterContactsList.map((data, index) => (
         <motion.li
+          custom={index}
           initial="hidden"
           animate="visible"
-          variants={slideInFromRight()}
+          variants={slideInFromRight(1)}
           className={`${s.contactItem} w-full md:w-xs lg:w-3xs xl:w-sm `}
           key={data.id}
         >

@@ -1,9 +1,16 @@
 import { Link } from "react-router-dom";
 import s from "./Home.module.css";
 import { FaStar } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { slideInFromBottom } from "../../motion/motion";
 const Home = () => {
   return (
-    <div className={s.homeSection}>
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={slideInFromBottom()}
+      className={s.homeSection}
+    >
       <div
         className={`${s.container}  
         p-4 flex flex-col gap-1 items-center justify-center
@@ -39,14 +46,14 @@ const Home = () => {
             </span>
           </li>
         </ul>
-        <p className={`${s.text} text-xl md:text-3xl lg:text-4xl`}>
+        <div className={`flex gap-2 text-xl md:text-3xl lg:text-4xl`}>
           <Link className={s.linkRegister} to="/register">
-            Sign up
-          </Link>{" "}
-          now and take control of your contacts!
-        </p>
+            <span>Sign up</span>
+          </Link>
+          <p className={s.text}>now and take control of your contacts!</p>
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

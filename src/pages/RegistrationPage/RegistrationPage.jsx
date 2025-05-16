@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
 import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
 import s from "./RegistrationPage.module.css";
+import { motion } from "framer-motion";
+import { slideInFromBottom } from "../../motion/motion";
 
 const RegistrationPage = () => {
   return (
-    <div
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={slideInFromBottom()}
       className={`${s.wrapRegister} flex flex-col-reverse jusftify-center md:flex-row md:w-2xl lg:w-4xl xl:w-6xl`}
     >
       <div
@@ -20,12 +25,12 @@ const RegistrationPage = () => {
           form below to register for Phonebook.
         </p>
         <RegistrationForm />
-        <p className={`${s.text} text-lg md:text-2xl md:mb-10`}>
-          Already have an account?{" "}
+        <div className={`flex text-lg md:text-2xl md:mb-10`}>
+          <p className={s.text}>Already have an account? </p>
           <Link className={s.linkLogin} to="/login">
-            Login
+            <span>Login</span>
           </Link>
-        </p>
+        </div>
       </div>
       <div
         className={`${s.boxWelcome}  flex flex-col justify-evenly items-center w-full pt-10 pr-6 pb-10 pl-6
@@ -44,7 +49,7 @@ const RegistrationPage = () => {
           Please fill out the registration form to start using all the features!
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

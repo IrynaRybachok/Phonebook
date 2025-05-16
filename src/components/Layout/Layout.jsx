@@ -6,7 +6,7 @@ const Layout = () => {
   return (
     <div className={`${s.layoutWrap} container `}>
       <AppBar />
-      <div className={s.mainContent}>
+      <div className={`${s.mainContent} mb-2 md:mb-4`}>
         <Outlet />
       </div>
     </div>

@@ -8,6 +8,8 @@ import Loader from "../../components/Loader/Loader";
 import { fetchContacts } from "../../redux/contacts/operations";
 import { selectError, selectLoading } from "../../redux/contacts/selectors";
 import s from "./ContactsPage.module.css";
+import { motion } from "framer-motion";
+import { slideInFromBottom } from "../../motion/motion";
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
@@ -18,7 +20,10 @@ const ContactsPage = () => {
   }, [dispatch]);
   return (
     <>
-      <div
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={slideInFromBottom()}
         className={`${s.containerPhonebook} w-full pt-8 pr-6 pb-8 pl-6 
         md:p-10 md:flex md:gap-10 md:w-2xl
         lg:w-4xl
@@ -35,7 +40,7 @@ const ContactsPage = () => {
           {isLoading && !isError && <Loader />}
           <ContactList />
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

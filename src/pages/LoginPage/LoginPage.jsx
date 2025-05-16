@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import s from "./LoginPage.module.css";
+import { motion } from "framer-motion";
+import { slideInFromBottom } from "../../motion/motion";
 
 const LoginPage = () => {
   return (
-    <div
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={slideInFromBottom()}
       className={`${s.wrapLogin} flex flex-col-reverse justify-center md:flex-row md:w-2xl lg:w-4xl xl:w-6xl`}
     >
       <div
@@ -19,12 +24,12 @@ const LoginPage = () => {
           Please login to your account.
         </p>
         <LoginForm />
-        <p className={`${s.text} text-lg md:text-2xl md:mb-10`}>
-          New user?{" "}
+        <div className={`flex gap-2 text-lg md:text-2xl md:mb-10`}>
+          <p className={s.text}>New user?</p>
           <Link className={s.linkRegister} to="/register">
-            Register
+            <span>Register</span>
           </Link>
-        </p>
+        </div>
       </div>
       <div
         className={`${s.boxWelcome} w-full flex flex-col justify-evenly items-center pt-10 pr-6 pb-10 pl-6  
@@ -41,7 +46,7 @@ const LoginPage = () => {
           back to where you left off.
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 export default LoginPage;
