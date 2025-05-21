@@ -24,9 +24,14 @@ const LoginPage = () => {
           Please login to your account.
         </p>
         <LoginForm />
-        <div className={`flex gap-2 text-lg md:text-2xl md:mb-10`}>
+        <div
+          className={`flex items-center gap-0.5 text-lg md:text-2xl md:mb-10 md:items-stretch`}
+        >
           <p className={s.text}>New user?</p>
-          <Link className={s.linkRegister} to="/register">
+          <Link
+            className={`${s.linkRegister} p-1 w-18 h-8 md:p-2 md:w-24 md:h-8 lg:w-24 lg:h-9`}
+            to="/register"
+          >
             <span>Register</span>
           </Link>
         </div>

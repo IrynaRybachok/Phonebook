@@ -25,9 +25,16 @@ const RegistrationPage = () => {
           form below to register for Phonebook.
         </p>
         <RegistrationForm />
-        <div className={`flex text-lg md:text-2xl md:mb-10`}>
+        <div
+          className={`flex items-center gap-0.5 text-lg 
+          md:text-2xl md:mb-6 md:flex-col md:items-center
+          lg:flex-row lg:items-stretch`}
+        >
           <p className={s.text}>Already have an account? </p>
-          <Link className={s.linkLogin} to="/login">
+          <Link
+            className={`${s.linkLogin} p-1 w-18 h-8 md:p-2 md:w-20 md:h-8 lg:w-20 lg:h-9`}
+            to="/login"
+          >
             <span>Login</span>
           </Link>
         </div>

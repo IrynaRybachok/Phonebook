@@ -46,8 +46,13 @@ const Home = () => {
             </span>
           </li>
         </ul>
-        <div className={`flex gap-2 text-xl md:text-3xl lg:text-4xl`}>
-          <Link className={s.linkRegister} to="/register">
+        <div
+          className={`flex items-center text-xl md:text-3xl md:gap-1 md:items-stretch lg:gap-1.5 lg:text-4xl xl:gap-2`}
+        >
+          <Link
+            className={`${s.linkRegister} p-1 w-20 h-8 md:p-2 md:w-28 md:h-10 lg:w-32 lg:h-11`}
+            to="/register"
+          >
             <span>Sign up</span>
           </Link>
           <p className={s.text}>now and take control of your contacts!</p>
